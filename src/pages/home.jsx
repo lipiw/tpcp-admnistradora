@@ -34,7 +34,7 @@ export function Home() {
           </div>
         </div>
       </div>
-      <section className="-mt-32 bg-gray-50 px-4 pb-20 pt-4">
+      <section className="-mt-32 bg-gray-50 px-4 pb-20 pt-4" id="about">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map(({ color, title, icon, description }) => (
@@ -62,7 +62,7 @@ export function Home() {
                 Sobre nós
               </Typography>
               <Typography className="mb-8 font-normal text-blue-gray-500">
-                Bem-vindo à nossa administradora de gestão de patrimônios! Somos uma equipe de profissionais altamente qualificados e dedicados, especializados em proteger, ampliar e transmitir o seu patrimônio de forma inteligente e eficiente. Nosso principal objetivo é fornecer soluções personalizadas e abrangentes para atender às suas necessidades financeiras e objetivos de longo prazo.
+                Bem-vindo à nossa administradora de gestão de patrimônios! Somos uma equipe de profissionais altamente qualificados e dedicados, especializados em proteger, ampliar e transmitir o seu patrimônio de forma inteligente e eficiente. Nosso principal objetivo é fornecer soluções personalizadas e abrangentes.
               </Typography>
             </div>
             <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
@@ -70,7 +70,7 @@ export function Home() {
                 <CardHeader className="relative h-56">
                   <img
                     alt="Card Image"
-                    src="/img/teamwork.jpeg"
+                    src="/img/reuniao.jpg"
                     className="h-full w-full"
                   />
                 </CardHeader>
@@ -91,7 +91,7 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="px-4 pt-20 pb-48">
+      <section className="px-4 pt-20 pb-48" id="offices">
         <div className="container mx-auto">
           <PageTitle heading="Aqui estão nossos escritórios" />
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
@@ -106,7 +106,7 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="relative bg-blue-gray-50/50 py-24 px-4">
+      <section className="relative bg-blue-gray-50/50 py-20 px-4" id="contact">
         <div className="container mx-auto">
           <PageTitle heading="Entre em contato!" />
           <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
