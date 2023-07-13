@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import Icon from "../../../public/img/favicon.png";
 import { Typography } from "@material-tailwind/react";
 
 export function PageTitle({ heading, children }) {
