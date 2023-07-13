@@ -9,7 +9,9 @@ export function Navbar() {
   return (
     <MTNavbar color="transparent" className="p-3">
       <div className="container mx-auto flex items-center justify-between text-white">
-          <img class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0" style={{ width: 155, height: 155 }} src="../../../public/img/logo.png" alt="TPCP Admnistração" />
+        <div className="rounded-full flex items-center justify-center" >
+          <img class="block mx-auto h-24 rounded-full  sm:mx-0 sm:shrink-0" style={{ width: 155, height: 155 }} src="../../../public/img/logo.png" alt="TPCP Admnistração" />
+        </div>
         <div className=" items-center w-full md:flex md:w-auto">
           <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-100">
             <li>
