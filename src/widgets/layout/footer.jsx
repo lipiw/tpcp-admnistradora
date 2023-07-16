@@ -67,7 +67,7 @@ Footer.defaultProps = {
     "Easy to use React components for Tailwind CSS and Material Design.",
   menus: [
     {
-      name: "useful links",
+      name: "Endereços",
       items: [
         { name: "Dr Tarciso Santos advogado Paulínia SP" },
         { name: "Dr Pedro Ferreira advogado Atibaia SP" },
