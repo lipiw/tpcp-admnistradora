@@ -10,7 +10,7 @@ export const escritorios = [
     position: "Alameda Rio Negro, Nº 503 Alphaville, Barueri/SP, 06454-000",
   },
   {
-    img: "/img/esc3.png",
+    img: "/img/paulinia.jpeg",
     name: "Paulínia - SP",
     position: "Rua Antônio Ferro, Nº 302 Jd. Vista Alegre, Paulínia/SP, 13140-180 ",
   },
