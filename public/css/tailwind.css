@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#imgLogo {
+    @media (max-width: 350px) { 
+        visibility: hidden;
+    }
+}
