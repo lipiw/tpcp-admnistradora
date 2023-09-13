@@ -3,55 +3,60 @@ import { Typography, IconButton } from "@material-tailwind/react";
 
 const year = new Date().getFullYear();
 
-export function Footer({ title, description, menus, copyright }) {
+export function Footer({ title, description, menu, copyright }) {
   return (
-    <footer className="relative px-4 pb-6">
-      <div className="container mx-auto">
-        <div className="flex flex-wrap pt-6 text-center lg:text-left">
-          <div className="w-full px-4 lg:w-6/12">
-            <Typography variant="h4" className="mb-4" color="blue-gray">
+    <footer className="flex justify-center relative bg-gray-400 px-4 pb-6">
+      <div className="container">
+        <div className="flex justify-between pt-6 text-center lg:text-left">
+          <div className="flex flex-col justify-center w-full px-7 lg:w-6/12">
+            <Typography
+              variant="h4"
+              className="mb-4"
+              color="text-blue-gray-900"
+            >
               {title}
             </Typography>
-            <Typography className="font-normal text-blue-gray-500">
+            <Typography className="font-normal text-black">
               {description}
             </Typography>
+            <Typography className="font-normal text-black">
+              CNPJ: 50.753.604/0001-87
+            </Typography>
           </div>
-          <div className="mx-auto mt-12 grid w-max grid-cols-2 gap-24 lg:mt-0">
-            {menus.map(({ name, items }) => (
-              <div key={name}>
-                <Typography
-                  variant="small"
-                  color="blue-gray"
-                  className="mb-2 block font-medium uppercase"
-                >
-                  {name}
-                </Typography>
-                <ul className="mt-3">
-                  {items.map((item) => (
-                    <li key={item.name}>
-                      <Typography
-                        as="a"
-                        target="_blank"
-                        rel="noreferrer"
-                        variant="small"
-                        className="mb-2 block font-normal text-blue-gray-500 hover:text-blue-gray-700"
-                      >
-                        {item.name}
-                      </Typography>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="">
+            <div className="flex flex-col justify-center">
+              {menu.items.map(({ name, number }) => (
+              <ul className="mt-3 flex">
+                <li>
+                  <Typography
+                    as="a"
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="small"
+                    className="mb-2 block font-normal text-black"
+                  >
+                    {name}
+                  </Typography>
+
+                  <Typography
+                    as="a"
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="small"
+                    className="mb-2 block font-normal text-black"
+                  >
+                    {number}
+                  </Typography>
+                </li>
+              </ul>
+              ))}
+            </div>
           </div>
         </div>
-        <hr className="my-6 border-gray-300" />
+        <hr className="border-text-blue-gray-900 my-6" />
         <div className="flex flex-wrap items-center justify-center md:justify-between">
           <div className="mx-auto w-full px-4 text-center">
-            <Typography
-              variant="small"
-              className="font-normal text-blue-gray-500"
-            >
+            <Typography variant="small" className="font-normal text-gray-900">
               {copyright}
             </Typography>
           </div>
@@ -65,33 +70,27 @@ Footer.defaultProps = {
   title: "Material Tailwind",
   description:
     "Easy to use React components for Tailwind CSS and Material Design.",
-  menus: [
-    {
-      name: "Endereços",
-      items: [
-        { name: "Dr Tarciso Santos advogado Paulínia SP" },
-        { name: "Dr Pedro Ferreira advogado Atibaia SP" },
-      ],
-    },
-    {
-      name: "Contatos",
-      items: [
-        {name: "(11) 93384-3135"},
-        {name: "(11) 95911-7045"},
-      ],
-    },
-  ],
-  copyright: (
-    <>
-      Copyright © {year} TPCP Amnistradora
-    </>
-  ),
+  menu: {
+    names: ["Endereços", "Contatos"],
+    items: [
+      {
+        name: "Dr Tarciso Santos advogado Paulínia SP",
+        number: "(11) 93384-3135",
+      },
+      {
+        name: "Dr Pedro Ferreira advogado Atibaia SP",
+        number: "(11) 95911-7045",
+      },
+    ],
+  },
+  copyright: <>Copyright © {year} TPCP Administradora</>,
 };
 
 Footer.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
-  menus: PropTypes.arrayOf(PropTypes.object),
+  socials: PropTypes.arrayOf(PropTypes.object),
+  menu: PropTypes.arrayOf(PropTypes.object),
   copyright: PropTypes.node,
 };
 

@@ -1,23 +1,27 @@
 import React from "react";
+import Cookies from "js-cookie";
 import {
   Card,
   CardBody,
   CardHeader,
+  IconButton,
   Typography,
+  Carousel,
+  Button,
 } from "@material-tailwind/react";
-import { UsersIcon } from "@heroicons/react/24/solid";
 import { PageTitle } from "@/widgets/layout";
 import { Footer } from "@/widgets/layout/footer";
+import { UsersIcon } from "@heroicons/react/24/solid";
 import { FeatureCard, TeamCard } from "@/widgets/cards";
-import { featuresData, escritorios, contactData } from "@/data";
+import { featuresData, escritorios, contactData, socials } from "@/data";
 
 export function Home() {
   return (
     <>
-      <div className="relative flex h-screen content-center items-center justify-center pt-16 pb-32">
-        <div className="absolute top-0 h-full w-full bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80')] bg-cover bg-center" />
-        <div className="absolute top-0 h-full w-full bg-black/75 bg-cover bg-center" />
-        <div className="max-w-8xl container mt-10 relative mx-auto">
+      <div className="relative flex h-screen content-center items-center justify-center pb-32 pt-16">
+        <div className="absolute top-0 h-full w-full bg-[url('https://images.unsplash.com/photo-1582810822512-cd067820a128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1267&q=80')] bg-cover bg-center" />
+        <div className="absolute top-0 h-full w-full bg-black/40 bg-cover bg-center" />
+        <div className="max-w-8xl container relative mx-auto mt-10">
           <div className="flex flex-wrap items-center">
             <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
               <Typography
@@ -27,8 +31,11 @@ export function Home() {
               >
                 Proteja, amplie e transmita seu patrimônio.
               </Typography>
-              <Typography variant="lead" color="white" className="opacity-80">
-                Maximize o potencial do seu patrimônio com nossa administradora especializada em gestão de ativos, oferecendo soluções personalizadas e confiáveis para garantir a segurança e crescimento dos seus investimentos.
+              <Typography variant="lead" color="white" className="opacity-100">
+                Maximize o potencial do seu patrimônio com nossa administradora
+                especializada em gestão de ativos, oferecendo soluções
+                personalizadas e confiáveis para garantir a segurança e
+                crescimento dos seus investimentos.
               </Typography>
             </div>
           </div>
@@ -62,7 +69,11 @@ export function Home() {
                 Sobre nós
               </Typography>
               <Typography className="mb-8 font-normal text-blue-gray-500">
-                Bem-vindo à nossa administradora de gestão de patrimônios! Somos uma equipe de profissionais altamente qualificados e dedicados, especializados em proteger, ampliar e transmitir o seu patrimônio de forma inteligente e eficiente. Nosso principal objetivo é fornecer soluções personalizadas e abrangentes.
+                Bem-vindo à nossa administradora de gestão de patrimônios! Somos
+                uma equipe de profissionais altamente qualificados e dedicados,
+                especializados em proteger, ampliar e transmitir o seu
+                patrimônio de forma inteligente e eficiente. Nosso principal
+                objetivo é fornecer soluções personalizadas e abrangentes.
               </Typography>
             </div>
             <div className="mx-auto mt-24 flex w-full justify-center px-4 md:w-4/12 lg:mt-0">
@@ -83,7 +94,9 @@ export function Home() {
                     Experiência no mercado
                   </Typography>
                   <Typography className="font-normal text-blue-gray-500">
-                    Com anos de experiência no mercado financeiro, estamos preparados para lidar com os desafios complexos e em constante evolução do mundo dos investimentos.
+                    Com anos de experiência no mercado financeiro, estamos
+                    preparados para lidar com os desafios complexos e em
+                    constante evolução do mundo dos investimentos.
                   </Typography>
                 </CardBody>
               </Card>
@@ -91,25 +104,41 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="px-4 pt-20 pb-48" id="offices">
+      <section className="px-4 pb-48 pt-20" id="offices">
         <div className="container mx-auto">
           <PageTitle heading="Aqui estão nossos escritórios" />
           <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
-            {escritorios.map(({ img, name, position, socials }) => (
-              <TeamCard
-                key={name}
-                img={img}
-                name={name}
-                position={position}
-              />
+            {escritorios.map(({ img, name, position }) => (
+              <TeamCard key={name} img={img} name={name} position={position} />
             ))}
           </div>
         </div>
       </section>
-      <section className="relative bg-blue-gray-50/50 py-20 px-4" id="contact">
+      <section className="relative bg-gray-300 px-4 py-20" id="contact">
         <div className="container mx-auto">
           <PageTitle heading="Entre em contato!" />
-          <div className="mx-auto mt-20 mb-48 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mb-8 mt-6 flex items-center justify-center gap-11 md:mb-0">
+            {socials.map(({ color, id, name, path }) => (
+              <a
+                key={name}
+                href={path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-16 w-16"
+              >
+                <Button color="white" className="flex items-center justify-center h-12 w-12 rounded-full shadow-2xl">
+                  <Typography color={color}>
+                    <i
+                      className={`${
+                        id === 3 ? "fa fa-lg fa-map-marker" : "fa-brands fa-lg fa-" + name
+                      }`}
+                    />
+                  </Typography>
+                </Button>
+              </a>
+            ))}
+          </div>
+          <div className="mx-auto mb-48 mt-20 grid max-w-5xl grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
             {contactData.map(({ title, icon, description }) => (
               <Card
                 key={title}
@@ -134,10 +163,12 @@ export function Home() {
         </div>
       </section>
       <div className="bg-blue-gray-50/50">
-        <Footer title="TPCP ADMINISTRADORA" description="Estruturação do trabalho de forma planejada para prestar um serviço eficiente." />
+        <Footer
+          title="TPCP ADMINISTRADORA"
+          description="Estruturação do trabalho de forma planejada para prestar um serviço eficiente."
+        />
       </div>
     </>
   );
 }
-
 export default Home;

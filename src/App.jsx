@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Navbar } from "@/widgets/layout/navbar";
 import routes from "@/routes";
 import { Home } from "./pages";
+import { Calculator } from "./pages";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       </div>
       <Routes>
         <Route key='/' exact path='/' element={<Home />} />
+        <Route key='/calculadora' exact path='/calculadora' element={<Calculator />} />
       </Routes>
     </>
   );
