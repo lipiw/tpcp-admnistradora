@@ -1,19 +1,14 @@
-import PropTypes from "prop-types";
-import { Typography, IconButton } from "@material-tailwind/react";
+import { Typography } from "@material-tailwind/react";
 
 const year = new Date().getFullYear();
 
 export function Footer({ title, description, menu, copyright }) {
   return (
-    <footer className="flex justify-center relative bg-gray-400 px-4 pb-6">
+    <footer className="relative flex justify-center bg-gray-400 px-4 pb-6">
       <div className="container">
         <div className="flex justify-between pt-6 text-center lg:text-left">
-          <div className="flex flex-col justify-center w-full px-7 lg:w-6/12">
-            <Typography
-              variant="h4"
-              className="mb-4"
-              color="text-blue-gray-900"
-            >
+          <div className="flex w-full flex-col justify-center px-7 lg:w-6/12">
+            <Typography variant="h4" className="mb-4" color="blue-gray">
               {title}
             </Typography>
             <Typography className="font-normal text-black">
@@ -26,34 +21,34 @@ export function Footer({ title, description, menu, copyright }) {
           <div className="">
             <div className="flex flex-col justify-center">
               {menu.items.map(({ name, number }) => (
-              <ul className="mt-3 flex">
-                <li>
-                  <Typography
-                    as="a"
-                    target="_blank"
-                    rel="noreferrer"
-                    variant="small"
-                    className="mb-2 block font-normal text-black"
-                  >
-                    {name}
-                  </Typography>
+                <ul key={name} className="mt-3 flex">
+                  <li>
+                    <Typography
+                      as="a"
+                      target="_blank"
+                      rel="noreferrer"
+                      variant="small"
+                      className="mb-2 block font-normal text-black"
+                    >
+                      {name}
+                    </Typography>
 
-                  <Typography
-                    as="a"
-                    target="_blank"
-                    rel="noreferrer"
-                    variant="small"
-                    className="mb-2 block font-normal text-black"
-                  >
-                    {number}
-                  </Typography>
-                </li>
-              </ul>
+                    <Typography
+                      as="a"
+                      target="_blank"
+                      rel="noreferrer"
+                      variant="small"
+                      className="mb-2 block font-normal text-black"
+                    >
+                      {number}
+                    </Typography>
+                  </li>
+                </ul>
               ))}
             </div>
           </div>
         </div>
-        <hr className="border-text-blue-gray-900 my-6" />
+        <hr className="border-text-blue-gray-800 my-6" />
         <div className="flex flex-wrap items-center justify-center md:justify-between">
           <div className="mx-auto w-full px-4 text-center">
             <Typography variant="small" className="font-normal text-gray-900">
@@ -85,15 +80,5 @@ Footer.defaultProps = {
   },
   copyright: <>Copyright © {year} TPCP Administradora</>,
 };
-
-Footer.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  socials: PropTypes.arrayOf(PropTypes.object),
-  menu: PropTypes.arrayOf(PropTypes.object),
-  copyright: PropTypes.node,
-};
-
-Footer.displayName = "/src/widgets/layout/footer.jsx";
 
 export default Footer;
