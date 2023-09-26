@@ -199,7 +199,7 @@ export function Home() {
                   <Typography color={color}>
                     <i
                       className={`${
-                        id === 3 ? "fa fa-map-marker" : "fa-brands fa-" + name
+                        id === 3 ? "fa fa-map-marker fa-xl" : "fa-xl fa-brands fa-" + name
                       }`}
                     />
                   </Typography>
