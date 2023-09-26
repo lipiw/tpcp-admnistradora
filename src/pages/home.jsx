@@ -14,31 +14,126 @@ import { Footer } from "@/widgets/layout/footer";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { FeatureCard, TeamCard } from "@/widgets/cards";
 import { featuresData, escritorios, contactData, socials } from "@/data";
+import { CarouselWithContent } from "@/widgets/carousel";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export function Home() {
+  const settings = {
+    infinite: true,
+    speed: 400,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    // responsive: [
+    //   {
+    //     breakpoint: 1024,
+    //     settings: {
+    //       slidesToShow: 3,
+    //       slidesToScroll: 3,
+    //       infinite: true,
+    //       dots: true,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 600,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 2,
+    //       initialSlide: 2,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 480,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
+  };
+
   return (
     <>
-      <div className="relative flex h-screen content-center items-center justify-center pb-32 pt-16">
-        <div className="absolute top-0 h-full w-full bg-[url('https://images.unsplash.com/photo-1582810822512-cd067820a128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1267&q=80')] bg-cover bg-center" />
-        <div className="absolute top-0 h-full w-full bg-black/40 bg-cover bg-center" />
-        <div className="max-w-8xl container relative mx-auto mt-10">
-          <div className="flex flex-wrap items-center">
-            <div className="ml-auto mr-auto w-full px-4 text-center lg:w-8/12">
-              <Typography
-                variant="h1"
-                color="white"
-                className="mb-6 font-black"
-              >
-                Proteja, amplie e transmita seu patrimônio.
-              </Typography>
-              <Typography variant="lead" color="white" className="opacity-100">
-                Maximize o potencial do seu patrimônio com nossa administradora
-                especializada em gestão de ativos, oferecendo soluções
-                personalizadas e confiáveis para garantir a segurança e
-                crescimento dos seus investimentos.
-              </Typography>
+      <div className="h-screen overflow-hidden">
+        <div className="">
+          <Slider {...settings}>
+            <div className="relative h-screen">
+              <img
+                src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1597&h=745&q=80"
+                alt="Slider 1"
+                className="h-full w-full object-cover brightness-50"
+              />
+              <div className="absolute left-1/2 top-1/2 mt-6 -translate-x-1/2 -translate-y-1/2">
+                <Typography
+                  variant="h1"
+                  color="white"
+                  className="mb-6 text-center text-xl font-black sm:text-3xl md:text-4xl lg:text-5xl"
+                >
+                  Transmita seu patrimônio
+                </Typography>
+                <Typography
+                  variant="lead"
+                  color="white"
+                  className="text-center text-lg opacity-80"
+                >
+                  Proteja seu patrimônio e garanta o legado de sua família com
+                  vossa expertise em estruturas de holding familiar.
+                </Typography>
+              </div>
             </div>
-          </div>
+            <div className="relative h-screen">
+              <img
+                src="https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1597&h=745&q=80"
+                alt="Slider 1"
+                className="h-full w-full object-cover brightness-50"
+              />
+              <div className="absolute left-1/2 top-1/2 mt-6 -translate-x-1/2 -translate-y-1/2">
+                <Typography
+                  variant="h1"
+                  color="white"
+                  className="mb-6 text-center text-xl font-black sm:text-3xl md:text-4xl lg:text-5xl"
+                >
+                  Segurança Judiciária para o seu Patrimônio
+                </Typography>
+                <Typography
+                  variant="lead"
+                  color="white"
+                  className="text-center text-lg opacity-80"
+                >
+                  Segurança Jurídica para apenas disfrutar sem preocupações e
+                  assegurando tranquilidade para o futuro.
+                </Typography>
+              </div>
+            </div>
+            <div className="relative h-screen">
+              <img
+                src="https://images.unsplash.com/photo-1610374792793-f016b77ca51a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1597&h=745&q=80"
+                alt="Slider 1"
+                className="h-full w-full object-cover brightness-50"
+              />
+              <div className="absolute left-1/2 top-1/2 mt-6 -translate-x-1/2 -translate-y-1/2">
+                <Typography
+                  variant="h1"
+                  color="white"
+                  className="mb-6 text-center text-xl font-black sm:text-3xl md:text-4xl lg:text-5xl"
+                >
+                  TPCP ADMINISTRADORA
+                </Typography>
+                <Typography
+                  variant="lead"
+                  color="white"
+                  className="text-center text-lg opacity-80"
+                >
+                  Maximize o potencial do seu patrimônio com nossa
+                  administradora especializada em gestão de ativos.
+                </Typography>
+              </div>
+            </div>
+          </Slider>
+          <div className="absolute top-0 h-full w-full bg-cover bg-center" />
         </div>
       </div>
       <section className="-mt-32 bg-gray-50 px-4 pb-20 pt-4" id="about">
@@ -117,24 +212,24 @@ export function Home() {
       <section className="relative bg-gray-300 px-4 py-20" id="contact">
         <div className="container mx-auto">
           <PageTitle heading="Entre em contato!" />
-          <div className="mx-auto mb-8 mt-6 flex items-center justify-center gap-11 md:mb-0">
+          <div className="mx-auto mb-8 mt-6 flex items-center justify-center gap-5 md:mb-0">
             {socials.map(({ color, id, name, path }) => (
               <a
                 key={name}
                 href={path}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="h-16 w-16"
+                className="h-14 w-14"
               >
-                <Button color="white" className="flex items-center justify-center h-12 w-12 rounded-full shadow-2xl">
+                <IconButton color="white" className="rounded-full shadow-2xl">
                   <Typography color={color}>
                     <i
                       className={`${
-                        id === 3 ? "fa fa-lg fa-map-marker" : "fa-brands fa-lg fa-" + name
+                        id === 3 ? "fa fa-map-marker" : "fa-brands fa-" + name
                       }`}
                     />
                   </Typography>
-                </Button>
+                </IconButton>
               </a>
             ))}
           </div>
