@@ -26,7 +26,7 @@ export function History() {
           <Card className="h-full w-full overflow-auto">
             {TABLE_ROWS.length === 0 ? (
               <div
-                class="my-20 rounded-lg bg-yellow-50 p-4 text-sm text-yellow-800 dark:bg-gray-800 dark:text-yellow-300"
+                className="my-20 rounded-lg bg-yellow-50 p-4 text-sm text-yellow-800 dark:bg-gray-800 dark:text-yellow-300"
                 role="alert"
               >
                 <span className="font-medium">Atenção!</span> Não há histórico a ser exibido, faça uma simulação em Calculadora.
