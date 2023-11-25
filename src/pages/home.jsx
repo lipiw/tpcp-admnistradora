@@ -1,20 +1,16 @@
 import React from "react";
-import Cookies from "js-cookie";
 import {
   Card,
   CardBody,
   CardHeader,
   IconButton,
   Typography,
-  Carousel,
-  Button,
 } from "@material-tailwind/react";
 import { PageTitle } from "@/widgets/layout";
 import { Footer } from "@/widgets/layout/footer";
 import { UsersIcon } from "@heroicons/react/24/solid";
 import { FeatureCard, TeamCard } from "@/widgets/cards";
 import { featuresData, escritorios, contactData, socials } from "@/data";
-import { CarouselWithContent } from "@/widgets/carousel";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -23,7 +19,7 @@ import "slick-carousel/slick/slick-theme.css";
 export function Home() {
   const settings = {
     infinite: true,
-    speed: 600,
+    speed: 700,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,

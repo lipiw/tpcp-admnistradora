@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar as MTNavbar } from "@material-tailwind/react";
 import { Link } from "react-scroll";
 
 export function Navbar() {
+  const [currentPage, setCurrentPage] = useState("");
+
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    setCurrentPage(currentPath);
+  }, []);
+
   return (
     <MTNavbar color="transparent" className="block p-3">
       <div className="container mx-auto block flex items-center justify-between text-white">
@@ -18,22 +25,24 @@ export function Navbar() {
         <div className=" hidden w-full items-center md:flex md:w-auto lg:block">
           <ul className="mb-4 mt-2 flex gap-2 text-inherit lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
             <li>
-              <Link
-                to="#"
-                className="pointer-events-none block rounded bg-yellow-100 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-yellow-100 md:dark:text-yellow-100"
+              <a
+                href="/"
+                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                  currentPage === "/" ? "text-yellow-100" : ""
+                }`}
                 aria-current="page"
               >
                 Principal
-              </Link>
+              </a>
             </li>
             <li>
               <Link
                 to="about"
-                smooth={true}
                 duration={500}
-                spy={true}
                 exact="true"
-                className="block cursor-pointer rounded py-2 pl-3 pr-4 text-white hover:bg-gray-100 dark:border-gray-100 dark:text-white dark:hover:bg-gray-100 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-yellow-100 md:dark:hover:bg-transparent md:dark:hover:text-yellow-100"
+                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                  currentPage === "/calculadora" || currentPage === "/historico" ? "pointer-events-none" : ""
+                }`}
               >
                 Sobre nós
               </Link>
@@ -41,11 +50,11 @@ export function Navbar() {
             <li>
               <Link
                 to="offices"
-                smooth={true}
                 duration={500}
-                spy={true}
                 exact="true"
-                className="block cursor-pointer rounded py-2 pl-3 pr-4 text-white hover:bg-gray-100 dark:border-gray-100 dark:text-white dark:hover:bg-gray-100 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-yellow-100 md:dark:hover:bg-transparent md:dark:hover:text-yellow-100"
+                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                  currentPage === "/calculadora" || currentPage === "/historico" ? "pointer-events-none" : ""
+                }`}
               >
                 Escritórios
               </Link>
@@ -53,14 +62,38 @@ export function Navbar() {
             <li>
               <Link
                 to="contact"
-                smooth={true}
                 duration={500}
-                spy={true}
                 exact="true"
-                className="block cursor-pointer rounded py-2 pl-3 pr-4 text-white hover:bg-gray-100 dark:border-gray-100 dark:text-white dark:hover:bg-gray-100 dark:hover:text-white md:p-0 md:hover:bg-transparent md:hover:text-yellow-100 md:dark:hover:bg-transparent md:dark:hover:text-yellow-100"
+                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                  currentPage === "/calculadora" || currentPage === "/historico" ? "pointer-events-none" : ""
+                }`}
               >
                 Contato
               </Link>
+            </li>
+            <li>
+              <a
+                href="/calculadora"
+                duration={500}
+                exact="true"
+                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                  currentPage === "/calculadora" ? "text-yellow-100" : ""
+                }`}
+              >
+                Calculadora
+              </a>
+            </li>
+            <li>
+              <a
+                href="/historico"
+                duration={500}
+                exact="true"
+                className={`block cursor-pointer rounded py-2 pr-4 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                  currentPage === "/historico" ? "text-yellow-100" : ""
+                }`}
+              >
+                Histórico
+              </a>
             </li>
           </ul>
         </div>
