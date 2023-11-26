@@ -6,14 +6,11 @@ import {
   IconButton,
   Typography,
 } from "@material-tailwind/react";
-import { PageTitle } from "../layout/page-title";
-import { Footer } from "../layout/footer";
+import { PageTitle } from "@/widgets/layout";
+import { Footer } from "@/widgets/layout/footer";
 import { UsersIcon } from "@heroicons/react/24/solid";
-import { FeatureCard } from "../widgets/cards/feature-card";
-import { TeamCard } from "../widgets/cards/team-card";
-import { featuresData } from "../data/valores";
-import { escritorios } from "../data/escritorios";
-import {  contactData, socials } from "../data/contato";
+import { FeatureCard, TeamCard } from "@/widgets/cards";
+import { featuresData, escritorios, contactData, socials } from "@/data";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

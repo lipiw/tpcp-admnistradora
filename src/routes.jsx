@@ -1,8 +1,8 @@
 import { Home } from "@/pages";
+import { Calculator } from "@/pages";
+import { History } from "@/pages";
 import {
   HomeIcon,
-  UserCircleIcon,
-  DocumentTextIcon,
 } from "@heroicons/react/24/solid";
 
 export const routes = [
@@ -13,12 +13,17 @@ export const routes = [
     element: <Home />,
   },
   {
-    icon: DocumentTextIcon,
-    name: "Docs",
-    href: "https://www.material-tailwind.com/docs/react/installation",
-    target: "_blank",
-    element: "",
+    icon: HomeIcon,
+    name: "calculadora",
+    path: "/calculadora",
+    element: <Calculator />,
   },
+  {
+    icon: HomeIcon,
+    name: "historico",
+    path: "/historico",
+    element: <History />,
+  }
 ];
 
 export default routes;
