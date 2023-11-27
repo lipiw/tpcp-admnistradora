@@ -18,30 +18,29 @@ for (let i = 0; i < localStorage.length; i++) {
 }
 
 export function History() {
-
   function formatarData(data) {
-    const [ano, mes] = data.split('-');
+    const [ano, mes] = data.split("-");
     return `${mes}/${ano}`;
   }
 
   function formatarParaReal(valor) {
     const numero = parseFloat(valor);
     if (isNaN(numero)) {
-      return 'Valor inválido';
+      return "Valor inválido";
     }
-  
-    const valorFormatado = numero.toLocaleString('pt-BR', {
-      style: 'currency',
-      currency: 'BRL',
+
+    const valorFormatado = numero.toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
     });
-  
+
     return valorFormatado;
   }
 
   return (
     <div className="relative flex h-screen content-center items-center justify-center bg-[url('https://images.unsplash.com/photo-1582810822512-cd067820a128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1267&q=80')] bg-cover bg-center pb-32 pt-28">
       <div className="absolute top-0 h-full w-full bg-black/40 bg-cover bg-center" />
-      <div className="mt-40 max-w-8xl container relative mx-auto h-96">
+      <div className="max-w-8xl container relative mx-auto mt-40 h-96">
         <div className="ml-auto mr-auto bg-white p-6 text-center sm:rounded-3xl">
           <Card className="h-full w-full overflow-auto">
             {TABLE_ROWS.length === 0 ? (
@@ -49,7 +48,8 @@ export function History() {
                 className="my-20 rounded-lg bg-yellow-50 p-4 text-sm text-yellow-800 dark:bg-gray-800 dark:text-yellow-300"
                 role="alert"
               >
-                <span className="font-medium">Atenção!</span> Não há histórico a ser exibido, faça uma simulação em Calculadora.
+                <span className="font-medium">Atenção!</span> Não há histórico a
+                ser exibido, faça uma simulação em Calculadora.
               </div>
             ) : (
               <table className="w-full min-w-max table-auto text-left">
@@ -166,8 +166,32 @@ export function History() {
               </table>
             )}
           </Card>
+        <div className="mt-10 flex h-14 items-center justify-center gap-8 rounded-full border border-gray-200 bg-white shadow dark:border-gray-700 dark:bg-gray-800">
+          <a
+            href="#"
+            className="flex items-center rounded-lg bg-green-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 dark:bg-green-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Proteja seu patrimônio e economize com uma holding familiar. Saiba mais
+            <svg
+              className="ms-2 h-3.5 w-3.5 rtl:rotate-180"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
         </div>
       </div>
+        </div>
+
     </div>
   );
 }
