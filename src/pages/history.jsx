@@ -6,7 +6,7 @@ const TABLE_HEAD = [
   "CIDADE",
   "DATA AQUISIÇÃO",
   "VALOR DE MERCADO",
-  "VALOR RESULTADO",
+  "ORÇAMENTO PROVÁVEL - INVENTÁRIO",
   "",
 ];
 const TABLE_ROWS = [];
@@ -18,10 +18,30 @@ for (let i = 0; i < localStorage.length; i++) {
 }
 
 export function History() {
+
+  function formatarData(data) {
+    const [ano, mes] = data.split('-');
+    return `${mes}/${ano}`;
+  }
+
+  function formatarParaReal(valor) {
+    const numero = parseFloat(valor);
+    if (isNaN(numero)) {
+      return 'Valor inválido';
+    }
+  
+    const valorFormatado = numero.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+    });
+  
+    return valorFormatado;
+  }
+
   return (
     <div className="relative flex h-screen content-center items-center justify-center bg-[url('https://images.unsplash.com/photo-1582810822512-cd067820a128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1267&q=80')] bg-cover bg-center pb-32 pt-28">
       <div className="absolute top-0 h-full w-full bg-black/40 bg-cover bg-center" />
-      <div className="max-w-8xl container relative mx-auto h-96">
+      <div className="mt-40 max-w-8xl container relative mx-auto h-96">
         <div className="ml-auto mr-auto bg-white p-6 text-center sm:rounded-3xl">
           <Card className="h-full w-full overflow-auto">
             {TABLE_ROWS.length === 0 ? (
@@ -105,7 +125,7 @@ export function History() {
                               color="blue-gray"
                               className="text-center font-normal"
                             >
-                              {selectedDataAquisicao}
+                              {formatarData(selectedDataAquisicao)}
                             </Typography>
                           </td>
                           <td className={classes}>
@@ -114,7 +134,7 @@ export function History() {
                               color="blue-gray"
                               className="text-center font-normal"
                             >
-                              {selectedValorMercado} R$
+                              {formatarParaReal(selectedValorMercado)}
                             </Typography>
                           </td>
                           <td className={classes}>
@@ -123,7 +143,7 @@ export function History() {
                               color="blue-gray"
                               className="text-center font-normal"
                             >
-                              {result}
+                              R$ {result}
                             </Typography>
                           </td>
                           <td className={classes}>

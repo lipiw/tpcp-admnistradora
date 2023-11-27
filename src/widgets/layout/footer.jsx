@@ -47,6 +47,24 @@ export function Footer({ title, description, menu, copyright }) {
               ))}
             </div>
           </div>
+          <div>
+          <a
+                href="/historico"
+                duration={500}
+                exact="true"
+                className="block cursor-pointer rounded py-2 pr-4 dark:border-gray-100 md:hover:text-yellow-600"
+              >
+                Histórico
+              </a>
+          <a
+                href="/calculadora"
+                duration={500}
+                exact="true"
+                className="block pt-10 cursor-pointer rounded py-2 pr-4 dark:border-gray-100 md:hover:text-yellow-600"
+              >
+                Calculadora
+              </a>
+          </div>
         </div>
         <hr className="border-text-blue-gray-800 my-6" />
         <div className="flex flex-wrap items-center justify-center md:justify-between">

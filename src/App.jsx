@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { Navbar } from "@/widgets/layout/navbar";
 import routes from "@/routes";
 import { Home } from "./pages";
