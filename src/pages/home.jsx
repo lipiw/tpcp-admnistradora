@@ -106,7 +106,7 @@ export function Home() {
           <div className="absolute top-0 h-full w-full bg-cover bg-center" />
         </div>
       </div>
-      <section className="-mt-32 bg-gray-50 px-4 pb-20 pt-4" id="about">
+      <section className="mt-20 bg-gray-50 px-4 pb-24 pt-4" id="about">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {featuresData.map(({ color, title, icon, description }) => (
@@ -121,8 +121,8 @@ export function Home() {
               />
             ))}
           </div>
-          <div className="mt-32 flex flex-wrap items-center">
-            <div className="mx-auto -mt-8 w-full px-4 md:w-5/12">
+          <div className="mt-24 flex flex-wrap items-center">
+            <div className="mx-auto w-full px-4 md:w-5/12">
               <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-white p-3 text-center shadow-lg">
                 <UsersIcon className="h-6 w-6 text-blue-gray-900" />
               </div>
