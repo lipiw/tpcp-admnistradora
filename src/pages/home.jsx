@@ -19,7 +19,7 @@ import "slick-carousel/slick/slick-theme.css";
 export function Home() {
   const settings = {
     infinite: true,
-    speed: 700,
+    speed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
@@ -169,10 +169,10 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="px-4 pb-48 pt-20" id="offices">
+      <section className="flex pb-48 pt-20" id="offices">
         <div className="container mx-auto">
-          <PageTitle heading="Aqui estão nossos escritórios" />
-          <div className="mt-24 grid grid-cols-1 gap-12 gap-x-24 md:grid-cols-2 xl:grid-cols-4">
+          <PageTitle className="" heading="Aqui estão nossos escritórios" />
+          <div className="mt-24 flex gap-40 md:grid-cols-2 xl:grid-cols-4">
             {escritorios.map(({ img, name, position }) => (
               <TeamCard key={name} img={img} name={name} position={position} />
             ))}

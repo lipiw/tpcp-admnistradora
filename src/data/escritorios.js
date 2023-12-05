@@ -1,6 +1,6 @@
 export const escritorios = [
   {
-    img: "/img/esc1.png",
+    img: "/img/foto-atibaia.jpeg",
     name: "Atibaia - SP",
     position: "R. Luiz Alberto Vieira dos Santos, Nº 400 Vila Santista, Atibaia/SP, 12941-030",
   },
@@ -8,11 +8,6 @@ export const escritorios = [
     img: "/img/esc2.png",
     name: "Alphaville - SP",
     position: "Alameda Rio Negro, Nº 503 Alphaville, Barueri/SP, 06454-000",
-  },
-  {
-    img: "/img/paulinia.jpeg",
-    name: "Paulínia - SP",
-    position: "Rua Antônio Ferro, Nº 302 Jd. Vista Alegre, Paulínia/SP, 13140-180 ",
   },
   {
     img: "/img/esc4.png",

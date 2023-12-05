@@ -27,7 +27,7 @@ export function Navbar() {
             <li>
               <a
                 href="/"
-                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                className={`block cursor-pointer rounded py-2 pl-6 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
                   currentPage === "/" ? "text-yellow-100" : ""
                 }`}
                 aria-current="page"
@@ -40,7 +40,7 @@ export function Navbar() {
                 to="about"
                 duration={500}
                 exact="true"
-                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                className={`block cursor-pointer rounded py-2 pl-6 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
                   currentPage === "/calculadora" || currentPage === "/historico" ? "pointer-events-none" : ""
                 }`}
               >
@@ -52,7 +52,7 @@ export function Navbar() {
                 to="offices"
                 duration={500}
                 exact="true"
-                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                className={`block cursor-pointer rounded py-2 pl-6 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
                   currentPage === "/calculadora" || currentPage === "/historico" ? "pointer-events-none" : ""
                 }`}
               >
@@ -64,7 +64,7 @@ export function Navbar() {
                 to="contact"
                 duration={500}
                 exact="true"
-                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                className={`block cursor-pointer rounded py-2 pl-6 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
                   currentPage === "/calculadora" || currentPage === "/historico" ? "pointer-events-none" : ""
                 }`}
               >
@@ -76,7 +76,7 @@ export function Navbar() {
                 href="/calculadora"
                 duration={500}
                 exact="true"
-                className={`block cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
+                className={`block ml-44 cursor-pointer rounded py-2 pl-10 text-white dark:border-gray-100 dark:text-white md:hover:text-yellow-100 ${
                   currentPage === "/calculadora" ? "text-yellow-100" : ""
                 }`}
               >
